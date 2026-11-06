@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+   ✏️ 자기소개 페이지 템플릿 · 별빛노트
+  ================================================================
+   1) 노란 형광펜 = 내가 채울 곳
+      Ctrl + F 로  mark  를 검색하면 채울 곳을 하나씩 찾을 수 있어요.
+      <mark> 와 </mark> 사이의 글자만 지우고 내 내용을 쓰세요.
+        예) <mark>내 이름</mark>  →  <mark>홍길동</mark>
+      ⚠️ < > 로 된 태그는 지우지 마세요.
+
+   2) 🎨 내 색깔 바꾸기
+      바로 아래 <style> 맨 위의 색 코드 다섯 개만 바꾸면
+      페이지 전체 색이 바뀌어요.
+
+   3) 다 채웠으면 형광펜 끄기
+      <body class="editing"> 를 <body> 로 바꾸면 노란 형광펜이 사라져요.
+
+   🔒 약속: 전화번호, 집 주소, 비밀번호는 절대 쓰지 않아요!
+  ================================================================
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 이름 · 자기소개</title> <!-- ✏️ 브라우저 탭 제목: "내 이름"을 바꿔요 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       🎨 내 색깔 바꾸기 — 색 코드 다섯 개만 바꿔요
+       ============================================================ */
+    :root {
+      --sky-top: #1B1F4B; /* 하늘 위 */
+      --main:    #3B3F8F; /* 메인 */
+      --sunset:  #F28C6B; /* 보조 */
+      --moon:    #FFD37A; /* 포인트 */
+      --page:    #F7F7FB; /* 바탕 */
+    }
+    /* 💡 마음에 드는 색 조합을 골라 위 다섯 줄에 덮어써 보세요
+       별빛노트 (기본) : #1B1F4B  #3B3F8F  #F28C6B  #FFD37A  #F7F7FB
+       숲속 교실       : #14342B  #2F6B4F  #E9A23B  #F6E7A1  #F5F8F4
+       바다 산책       : #0B2545  #13315C  #4FB3BF  #FFE29A  #F4F8FB
+       벚꽃 운동장     : #3D2C3E  #8E4A6B  #F4A6B8  #FFE3EC  #FCF7F8
+       (순서: 하늘 위 / 메인 / 보조 / 포인트 / 바탕)                   */
+
+    /* ---------- 여기부터 아래는 고치지 않아도 돼요 ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--page);
+      color: #2A2D45;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* 노란 형광펜 (body에 editing이 있을 때만 보여요) */
+    mark { background: none; color: inherit; }
+    .editing mark {
+      background: #FFF200;
+      color: #1B1F4B;
+      padding: 0 4px;
+      border-radius: 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    /* ---------- 하늘 (첫 화면) ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #FFFFFF;
+      background: linear-gradient(180deg, var(--sky-top) 0%, var(--main) 50%, var(--sunset) 100%);
+      padding-bottom: 140px;
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; position: relative; z-index: 2; }
+    .logo { font-family: "Gaegu", cursive; font-size: 1.4rem; text-decoration: none; }
+    .menu { display: flex; gap: 20px; overflow-x: auto; white-space: nowrap; }
+    .menu a { text-decoration: none; font-size: 0.95rem; opacity: 0.9; }
+    .menu a:hover { opacity: 1; text-decoration: underline; }
+
+    .stars span { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: 0.8; }
+    .moon {
+      position: absolute; top: 120px; right: 10%;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #FFFFFF 0%, var(--moon) 75%);
+      box-shadow: 0 0 60px var(--moon);
+    }
+    .hero-text { position: relative; z-index: 1; padding-top: 90px; max-width: 640px; }
+    .badge {
+      display: inline-block;
+      background: var(--moon); color: var(--sky-top);
+      font-weight: 700; font-size: 0.9rem;
+      padding: 4px 16px; border-radius: 999px;
+    }
+    .hero h1 {
+      font-family: "Gaegu", cursive;
+      font-size: clamp(2.6rem, 9vw, 4.4rem);
+      line-height: 1.25; margin: 20px 0 16px;
+    }
+    .slogan { font-size: 1.15rem; }
+    .wave { position: absolute; left: 0; bottom: -1px; width: 100%; height: 120px; display: block; }
+
+    /* ---------- 아래 섹션 공통 ---------- */
+    section.block { padding: 64px 0; scroll-margin-top: 20px; }
+    .eyebrow { color: var(--main); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; }
+    h2 { font-family: "Gaegu", cursive; font-size: 2.4rem; color: var(--sky-top); line-height: 1.2; margin: 4px 0 24px; }
+    h3 { font-size: 1.1rem; color: var(--sky-top); margin-bottom: 6px; }
+    p + p { margin-top: 12px; }
+
+    .card { background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 16px; padding: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .emoji { font-size: 2rem; margin-bottom: 8px; }
+    .muted { color: #5A5E7A; }
+
+    .info { display: grid; grid-template-columns: 120px 1fr; gap: 10px 16px; margin-top: 24px; }
+    .info dt { color: var(--main); font-weight: 700; }
+
+    .project .tag { display: inline-block; font-size: 0.8rem; color: var(--main); border: 1px solid var(--main); border-radius: 999px; padding: 0 10px; margin-bottom: 10px; }
+    .project a { color: var(--main); font-weight: 500; }
+
+    .timeline { border-left: 3px solid var(--sunset); padding-left: 24px; }
+    .timeline .item { position: relative; padding-bottom: 24px; }
+    .timeline .item::before {
+      content: ""; position: absolute; left: -32px; top: 6px;
+      width: 13px; height: 13px; border-radius: 50%;
+      background: var(--moon); border: 3px solid var(--sunset);
+    }
+    .when { color: var(--main); font-weight: 700; font-size: 0.9rem; }
+
+    .contact { background: var(--sky-top); color: #FFFFFF; border-radius: 24px; padding: 40px 28px; text-align: center; }
+    .contact h2 { color: #FFFFFF; }
+    .contact .eyebrow { color: var(--moon); }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px; }
+    .links a { background: var(--moon); color: var(--sky-top); text-decoration: none; font-weight: 700; padding: 10px 20px; border-radius: 999px; }
+
+    footer { text-align: center; color: #8A8FB0; font-size: 0.9rem; padding: 32px 0 48px; }
+
+    /* ---------- 휴대폰 화면 ---------- */
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .info { grid-template-columns: 96px 1fr; }
+      .moon { width: 56px; height: 56px; top: 58px; right: 16px; box-shadow: 0 0 30px var(--moon); }
+      .hero-text { padding-top: 56px; }
+      .logo { display: none; }
+      .menu { gap: 16px; }
+      section.block { padding: 48px 0; }
+      h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<!-- 다 채웠으면 class="editing" 을 지워서 <body> 로 바꾸세요 (형광펜 끄기) -->
+<body class="editing">
+
+  <!-- ===================== 하늘 (첫 화면) ===================== -->
+  <header class="hero">
+    <div class="stars" aria-hidden="true">
+      <span style="top:110px;left:8%"></span><span style="top:70px;left:22%"></span>
+      <span style="top:140px;left:41%"></span><span style="top:95px;left:57%"></span>
+      <span style="top:200px;left:70%"></span><span style="top:130px;left:93%"></span>
+    </div>
+    <div class="moon" aria-hidden="true"></div>
+
+    <div class="container">
+      <nav>
+        <a class="logo" href="#"><mark>내 이름</mark></a>
+        <div class="menu">
+          <a href="#about">소개</a>
+          <a href="#skills">잘하는 것</a>
+          <a href="#projects">프로젝트</a>
+          <a href="#history">경력</a>
+          <a href="#contact">연락처</a>
+        </div>
+      </nav>
+
+      <div class="hero-text">
+        <span class="badge"><mark>나를 나타내는 짧은 말 (예: 수학러버 × 코딩러)</mark></span>
+        <h1>안녕하세요,<br><mark>내 이름</mark>입니다!</h1>
+        <p class="slogan"><mark>나를 한 줄로 표현하는 슬로건 (예: "질문이 살아 있는 교실을 만드는 학생")</mark></p>
+        <p class="slogan"><mark>한 문장 더 (예: 친구들과 함께 배우며 성장하는 것을 좋아합니다.)</mark></p>
+      </div>
+    </div>
+
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,50 C240,0 480,0 720,50 C960,100 1200,100 1440,50 L1440,120 L0,120 Z" fill="var(--page)"/>
+      <path d="M0,50 C240,0 480,0 720,50 C960,100 1200,100 1440,50" fill="none" stroke="var(--sunset)" stroke-width="3"/>
+    </svg>
+  </header>
+
+  <main class="container">
+
+    <!-- ===================== 소개 ===================== -->
+    <section class="block" id="about">
+      <p class="eyebrow">ABOUT ME</p>
+      <h2>소개</h2>
+      <p><mark>나는 어떤 사람인지 2~3문장으로 소개해요. (예: 저는 규칙을 찾는 것을 좋아하는 사람입니다.)</mark></p>
+      <p><mark>요즘 관심 있는 것이나 빠져 있는 것을 써요.</mark></p>
+
+      <dl class="info">
+        <dt>좋아하는 과목</dt><dd><mark>과목 이름</mark> — <mark>좋아하는 이유 한 문장</mark></dd>
+        <dt>취미</dt><dd><mark>취미 1</mark>, <mark>취미 2</mark>, <mark>취미 3</mark></dd>
+        <dt>좋아하는 것</dt><dd><mark>음식, 음악, 책 등</mark></dd>
+      </dl>
+    </section>
+
+    <!-- ===================== 잘하는 것 ===================== -->
+    <section class="block" id="skills">
+      <p class="eyebrow">SKILLS</p>
+      <h2>잘하는 것</h2>
+      <!-- 💡 이모지 넣기: 윈도우 Win + .(마침표) / 맥 Ctrl + Cmd + 스페이스 -->
+      <div class="grid">
+        <div class="card">
+          <div class="emoji"><mark>💻</mark></div>
+          <h3><mark>잘하는 것 1</mark></h3>
+          <p class="muted"><mark>어떻게 잘하는지 한두 문장</mark></p>
+        </div>
+        <div class="card">
+          <div class="emoji"><mark>📐</mark></div>
+          <h3><mark>잘하는 것 2</mark></h3>
+          <p class="muted"><mark>어떻게 잘하는지 한두 문장</mark></p>
+        </div>
+        <div class="card">
+          <div class="emoji"><mark>🎨</mark></div>
+          <h3><mark>잘하는 것 3</mark></h3>
+          <p class="muted"><mark>어떻게 잘하는지 한두 문장</mark></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 프로젝트 ===================== -->
+    <section class="block" id="projects">
+      <p class="eyebrow">PROJECTS</p>
+      <h2>프로젝트</h2>
+      <div class="grid">
+        <div class="card project">
+          <span class="tag">웹사이트</span>
+          <h3>나의 첫 웹사이트</h3>
+          <p class="muted">GitHub와 Vercel로 처음 만든 페이지예요.</p>
+          <!-- ✏️ 내 my-first-site 주소를 href="" 안과 글자 두 군데에 넣어요 -->
+          <p><a href="https://my-first-site.vercel.app"><mark>my-first-site 주소</mark></a></p>
+        </div>
+        <div class="card project">
+          <span class="tag"><mark>분야</mark></span>
+          <h3><mark>프로젝트 이름</mark></h3>
+          <p class="muted"><mark>무엇을 만들었고 무엇을 배웠는지</mark></p>
+        </div>
+        <div class="card project">
+          <span class="tag"><mark>분야</mark></span>
+          <h3><mark>프로젝트 이름</mark></h3>
+          <p class="muted"><mark>무엇을 만들었고 무엇을 배웠는지</mark></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 경력 ===================== -->
+    <section class="block" id="history">
+      <p class="eyebrow">HISTORY</p>
+      <h2>경력</h2>
+      <div class="timeline">
+        <div class="item">
+          <p class="when">2026년 11월</p>
+          <p>Git + Vercel로 나만의 자기소개 페이지 공개</p>
+        </div>
+        <div class="item">
+          <p class="when"><mark>시기</mark></p>
+          <p><mark>했던 활동, 대회, 동아리, 봉사 등</mark></p>
+        </div>
+        <div class="item">
+          <p class="when"><mark>시기</mark></p>
+          <p><mark>했던 활동, 대회, 동아리, 봉사 등</mark></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 연락처 ===================== -->
+    <!-- 🔒 전화번호, 집 주소는 쓰지 않아요! GitHub처럼 공개해도 되는 것만 -->
+    <section class="block" id="contact">
+      <div class="contact">
+        <p class="eyebrow">CONTACT</p>
+        <h2>연락처</h2>
+        <p><mark>방문한 사람에게 하고 싶은 한마디 (예: 같이 재미있는 걸 만들어요!)</mark></p>
+        <div class="links">
+          <!-- ✏️ "내아이디"를 내 GitHub 사용자 이름으로 (href 안과 글자 두 군데) -->
+          <a href="https://github.com/내아이디">GitHub · <mark>내아이디</mark></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 <mark>내 이름</mark> · GitHub + Vercel로 만든 페이지</footer>
+</body>
+</html>
