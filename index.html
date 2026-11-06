@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <!--
   ================================================================
-   ✏️ 자기소개 페이지 템플릿 · 별빛노트
+   ✏️ 자기소개 페이지 샘플 · 별빛노트 (허석 선생님 버전)
   ================================================================
-   1) 노란 형광펜 = 내가 채울 곳
-      Ctrl + F 로  mark  를 검색하면 채울 곳을 하나씩 찾을 수 있어요.
-      <mark> 와 </mark> 사이의 글자만 지우고 내 내용을 쓰세요.
-        예) <mark>내 이름</mark>  →  <mark>홍길동</mark>
-      ⚠️ < > 로 된 태그는 지우지 마세요.
-
-   2) 🎨 내 색깔 바꾸기
-      바로 아래 <style> 맨 위의 색 코드 다섯 개만 바꾸면
-      페이지 전체 색이 바뀌어요.
-
-   3) 다 채웠으면 형광펜 끄기
-      <body class="editing"> 를 <body> 로 바꾸면 노란 형광펜이 사라져요.
+   profile-template 의 노란 형광펜(<mark>) 자리를 모두 채운 완성 예시예요.
+   Ctrl + F 로  mark  를 검색하면 무엇을 바꿨는지 볼 수 있어요.
+   형광펜은 <body class="editing"> 을 <body> 로 바꿔서 껐어요.
 
    🔒 약속: 전화번호, 집 주소, 비밀번호는 절대 쓰지 않아요!
   ================================================================
@@ -23,7 +14,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 이름 · 자기소개</title> <!-- ✏️ 브라우저 탭 제목: "내 이름"을 바꿔요 -->
+  <title>허석 · 자기소개</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -153,8 +144,8 @@
   </style>
 </head>
 
-<!-- 다 채웠으면 class="editing" 을 지워서 <body> 로 바꾸세요 (형광펜 끄기) -->
-<body class="editing">
+<!-- 다 채워서 class="editing" 을 지웠어요 (형광펜 끄기) -->
+<body>
 
   <!-- ===================== 하늘 (첫 화면) ===================== -->
   <header class="hero">
@@ -167,7 +158,7 @@
 
     <div class="container">
       <nav>
-        <a class="logo" href="#"><mark>내 이름</mark></a>
+        <a class="logo" href="#"><mark>허석</mark></a>
         <div class="menu">
           <a href="#about">소개</a>
           <a href="#skills">잘하는 것</a>
@@ -178,10 +169,10 @@
       </nav>
 
       <div class="hero-text">
-        <span class="badge"><mark>나를 나타내는 짧은 말 (예: 수학러버 × 코딩러)</mark></span>
-        <h1>안녕하세요,<br><mark>내 이름</mark>입니다!</h1>
-        <p class="slogan"><mark>나를 한 줄로 표현하는 슬로건 (예: "질문이 살아 있는 교실을 만드는 학생")</mark></p>
-        <p class="slogan"><mark>한 문장 더 (예: 친구들과 함께 배우며 성장하는 것을 좋아합니다.)</mark></p>
+        <span class="badge"><mark>수학교사 × 소프트웨어 엔지니어</mark></span>
+        <h1>안녕하세요,<br><mark>허석</mark>입니다!</h1>
+        <p class="slogan"><mark>"수학을 코드로 보여 주는 선생님"</mark></p>
+        <p class="slogan"><mark>남들과 다른 수업 자료를 직접 만들어 학생들과 나누는 것을 좋아합니다.</mark></p>
       </div>
     </div>
 
@@ -197,13 +188,13 @@
     <section class="block" id="about">
       <p class="eyebrow">ABOUT ME</p>
       <h2>소개</h2>
-      <p><mark>나는 어떤 사람인지 2~3문장으로 소개해요. (예: 저는 규칙을 찾는 것을 좋아하는 사람입니다.)</mark></p>
-      <p><mark>요즘 관심 있는 것이나 빠져 있는 것을 써요.</mark></p>
+      <p><mark>저는 수학을 가르치면서 코딩으로 수업 자료를 만드는 수학 선생님입니다. 문제 속에 숨은 규칙을 찾고, 그것을 그림과 코드로 보여 줄 때 가장 즐겁습니다.</mark></p>
+      <p><mark>요즘은 AI를 활용해 수학 문항을 검증하고, 학생들이 직접 웹페이지를 만들어 세상에 공개해 보는 수업을 준비하고 있어요.</mark></p>
 
       <dl class="info">
-        <dt>좋아하는 과목</dt><dd><mark>과목 이름</mark> — <mark>좋아하는 이유 한 문장</mark></dd>
-        <dt>취미</dt><dd><mark>취미 1</mark>, <mark>취미 2</mark>, <mark>취미 3</mark></dd>
-        <dt>좋아하는 것</dt><dd><mark>음식, 음악, 책 등</mark></dd>
+        <dt>좋아하는 과목</dt><dd><mark>수학</mark> — <mark>복잡해 보이는 문제도 구조를 찾으면 한 줄로 정리되는 순간이 멋지기 때문입니다.</mark></dd>
+        <dt>취미</dt><dd><mark>코딩</mark>, <mark>문제 만들기</mark>, <mark>새로운 AI 도구 써 보기</mark></dd>
+        <dt>좋아하는 것</dt><dd><mark>깔끔한 증명, 잘 정리된 코드, 학생들의 "아하!" 하는 표정</mark></dd>
       </dl>
     </section>
 
@@ -211,22 +202,21 @@
     <section class="block" id="skills">
       <p class="eyebrow">SKILLS</p>
       <h2>잘하는 것</h2>
-      <!-- 💡 이모지 넣기: 윈도우 Win + .(마침표) / 맥 Ctrl + Cmd + 스페이스 -->
       <div class="grid">
         <div class="card">
-          <div class="emoji"><mark>💻</mark></div>
-          <h3><mark>잘하는 것 1</mark></h3>
-          <p class="muted"><mark>어떻게 잘하는지 한두 문장</mark></p>
-        </div>
-        <div class="card">
           <div class="emoji"><mark>📐</mark></div>
-          <h3><mark>잘하는 것 2</mark></h3>
-          <p class="muted"><mark>어떻게 잘하는지 한두 문장</mark></p>
+          <h3><mark>수학 문항 만들기·검증</mark></h3>
+          <p class="muted"><mark>정답과 해설의 오류, 조건 누락, 복수정답을 꼼꼼히 찾아냅니다.</mark></p>
         </div>
         <div class="card">
-          <div class="emoji"><mark>🎨</mark></div>
-          <h3><mark>잘하는 것 3</mark></h3>
-          <p class="muted"><mark>어떻게 잘하는지 한두 문장</mark></p>
+          <div class="emoji"><mark>💻</mark></div>
+          <h3><mark>코딩</mark></h3>
+          <p class="muted"><mark>HTML·JavaScript·Python으로 수업용 웹페이지와 도구를 만듭니다.</mark></p>
+        </div>
+        <div class="card">
+          <div class="emoji"><mark>🤖</mark></div>
+          <h3><mark>AI 활용 수업</mark></h3>
+          <p class="muted"><mark>AI로 업무를 줄이고, 그 시간을 학생과 대화하는 데 씁니다.</mark></p>
         </div>
       </div>
     </section>
@@ -240,18 +230,17 @@
           <span class="tag">웹사이트</span>
           <h3>나의 첫 웹사이트</h3>
           <p class="muted">GitHub와 Vercel로 처음 만든 페이지예요.</p>
-          <!-- ✏️ 내 my-first-site 주소를 href="" 안과 글자 두 군데에 넣어요 -->
-          <p><a href="https://my-first-site.vercel.app"><mark>my-first-site 주소</mark></a></p>
+          <p><a href="https://my-first-site.vercel.app"><mark>my-first-site.vercel.app</mark></a></p>
         </div>
         <div class="card project">
-          <span class="tag"><mark>분야</mark></span>
-          <h3><mark>프로젝트 이름</mark></h3>
-          <p class="muted"><mark>무엇을 만들었고 무엇을 배웠는지</mark></p>
+          <span class="tag"><mark>수학 × 웹</mark></span>
+          <h3><mark>킬러 ShrekMath</mark></h3>
+          <p class="muted"><mark>직접 만든 수능형 창작 문항을 한 단계씩 해부해 보여 주는 웹페이지입니다.</mark></p>
         </div>
         <div class="card project">
-          <span class="tag"><mark>분야</mark></span>
-          <h3><mark>프로젝트 이름</mark></h3>
-          <p class="muted"><mark>무엇을 만들었고 무엇을 배웠는지</mark></p>
+          <span class="tag"><mark>수업 자료</mark></span>
+          <h3><mark>Git + Vercel 첫걸음</mark></h3>
+          <p class="muted"><mark>학생들이 자기소개 페이지를 만들어 배포까지 해 보는 강의안과 템플릿을 만들었습니다.</mark></p>
         </div>
       </div>
     </section>
@@ -266,12 +255,12 @@
           <p>Git + Vercel로 나만의 자기소개 페이지 공개</p>
         </div>
         <div class="item">
-          <p class="when"><mark>시기</mark></p>
-          <p><mark>했던 활동, 대회, 동아리, 봉사 등</mark></p>
+          <p class="when"><mark>2026년</mark></p>
+          <p><mark>AI 서논술형 평가 채점 교원 연수 강의</mark></p>
         </div>
         <div class="item">
-          <p class="when"><mark>시기</mark></p>
-          <p><mark>했던 활동, 대회, 동아리, 봉사 등</mark></p>
+          <p class="when"><mark>현재</mark></p>
+          <p><mark>수학교사 겸 소프트웨어 엔지니어로 수학 교수학습자료 개발</mark></p>
         </div>
       </div>
     </section>
@@ -282,15 +271,14 @@
       <div class="contact">
         <p class="eyebrow">CONTACT</p>
         <h2>연락처</h2>
-        <p><mark>방문한 사람에게 하고 싶은 한마디 (예: 같이 재미있는 걸 만들어요!)</mark></p>
+        <p><mark>여러분도 자기만의 페이지를 만들어 보세요. 같이 재미있는 걸 만들어요!</mark></p>
         <div class="links">
-          <!-- ✏️ "내아이디"를 내 GitHub 사용자 이름으로 (href 안과 글자 두 군데) -->
-          <a href="https://github.com/내아이디">GitHub · <mark>내아이디</mark></a>
+          <a href="https://github.com/Shrek7979">GitHub · <mark>Shrek7979</mark></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>© 2026 <mark>내 이름</mark> · GitHub + Vercel로 만든 페이지</footer>
+  <footer>© 2026 <mark>허석</mark> · GitHub + Vercel로 만든 페이지</footer>
 </body>
 </html>
